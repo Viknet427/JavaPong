@@ -1,4 +1,6 @@
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Main {
 
@@ -18,6 +20,22 @@ public class Main {
 
         // Makes the window visible
         frame.setVisible(true);
+
+        Timer timer = new Timer(33, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                // Game Logic
+                pongGame.gameLogic();
+
+                // Redraw the screen
+                pongGame.repaint();
+
+            }
+
+        });
+
+        timer.start();
 
     }
 

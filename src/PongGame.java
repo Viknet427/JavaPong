@@ -26,4 +26,10 @@ public class PongGame extends JPanel {
 
     }
 
+    public void gameLogic() {
+
+        pongBall.moveBall();
+
+    }
+
 }

@@ -27,4 +27,11 @@ public class Ball {
 
     }
 
+    public void moveBall() {
+
+        x += changeX;
+        y += changeY;
+
+    }
+
 }
