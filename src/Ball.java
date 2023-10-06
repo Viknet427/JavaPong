@@ -74,4 +74,10 @@ public class Ball {
 
     }
 
+    public int getY() {
+
+        return y;
+
+    }
+    
 }
