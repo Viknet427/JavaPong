@@ -11,7 +11,7 @@ public class PongGame extends JPanel {
 
         pongBall = new Ball(300, 200, 3, 3, 3, Color.YELLOW, 10);
         userPaddle = new Paddle(10, 200, 75, 3, Color.BLUE);
-        pcPaddle = new Paddle(610, 200, 75, 3, Color.BLUE);
+        pcPaddle = new Paddle(610, 200, 75, 3, Color.RED);
 
     }
 
@@ -40,6 +40,9 @@ public class PongGame extends JPanel {
 
         // Checks for collision
         pongBall.bounceOffEdges(0, WINDOW_HEIGHT);
+
+        userPaddle.moveTowards(0);
+        pcPaddle.moveTowards(600);
 
     }
 
