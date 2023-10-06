@@ -12,9 +12,9 @@ public class Main {
         // Set the window size since the default window size of 480x640 is too small
         frame.setSize(650, 495);
 
-        PongGame game = new PongGame();
+        PongGame pongGame = new PongGame();
 
-        frame.add(game);
+        frame.add(pongGame);
 
         // Makes the window visible
         frame.setVisible(true);
