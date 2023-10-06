@@ -1,17 +1,24 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseMotionListener;
 
-public class PongGame extends JPanel {
+public class PongGame extends JPanel implements MouseMotionListener {
 
     static final int WINDOW_WIDTH = 640, WINDOW_HEIGHT = 480;
     private Ball pongBall;
     private Paddle userPaddle, pcPaddle;
+
+    private int userMouseY;
 
     public PongGame() {
 
         pongBall = new Ball(300, 200, 3, 3, 3, Color.YELLOW, 10);
         userPaddle = new Paddle(10, 200, 75, 3, Color.BLUE);
         pcPaddle = new Paddle(610, 200, 75, 3, Color.RED);
+
+        userMouseY = 0;
+        addMouseMotionListener(this);
 
     }
 
@@ -41,8 +48,18 @@ public class PongGame extends JPanel {
         // Checks for collision
         pongBall.bounceOffEdges(0, WINDOW_HEIGHT);
 
-        userPaddle.moveTowards(0);
-        pcPaddle.moveTowards(600);
+        // Moves the user's paddle towards their mouse position
+        userPaddle.moveTowards(userMouseY);
+
+    }
+
+    @Override
+    public void mouseDragged(MouseEvent e) {}
+
+    @Override
+    public void mouseMoved(MouseEvent e) {
+
+        userMouseY = e.getY();
 
     }
 
