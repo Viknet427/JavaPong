@@ -2,6 +2,7 @@ import java.awt.*;
 
 public class Ball {
 
+    static final int MAX_SPEED = 7;
     private int x, y, changeX, changeY, speed, size;
     private Color color;
 
@@ -42,12 +43,6 @@ public class Ball {
 
         }
 
-        if (x < 0 || x > 640 - size) {
-
-            reverseX();
-
-        }
-
     }
 
     public void reverseX() {
@@ -59,6 +54,21 @@ public class Ball {
     public void reverseY() {
 
         changeY *= -1;
+
+    }
+
+    public void increaseSpeed() {
+
+        if (speed >= MAX_SPEED) {
+
+            return;
+
+        }
+
+        speed++;
+
+        changeX = changeX / Math.abs(changeX) * speed;
+        changeY = changeY / Math.abs(changeY) * speed;
 
     }
 
@@ -79,4 +89,29 @@ public class Ball {
         return size;
 
     }
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
+
+    public void setChangeX(int changeX) {
+        this.changeX = changeX;
+    }
+
+    public void setChangeY(int changeY) {
+        this.changeY = changeY;
+    }
+
+    public void setSpeed(int speed) {
+        this.speed = speed;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
+    }
+
 }
