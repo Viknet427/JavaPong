@@ -1,5 +1,4 @@
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -15,9 +14,9 @@ public class Main {
         // Set the window size since the default window size of 480x640 is too small
         frame.setSize(650, 495);
 
-        PongGame pongGame = new PongGame();
+        JavaPong javaPong = new JavaPong();
 
-        frame.add(pongGame);
+        frame.add(javaPong);
 
         // Makes the window visible
         frame.setVisible(true);
@@ -27,10 +26,10 @@ public class Main {
             public void actionPerformed(ActionEvent e) {
 
                 // Game Logic
-                pongGame.gameLogic();
+                javaPong.gameLogic();
 
                 // Redraw the screen
-                pongGame.repaint();
+                javaPong.repaint();
 
                 // Fixes the lag when the mouse isn't moving
                 frame.getToolkit().sync();

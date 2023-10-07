@@ -3,7 +3,7 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-public class PongGame extends JPanel implements KeyListener {
+public class JavaPong extends JPanel implements KeyListener {
 
     static final int WINDOW_WIDTH = 640, WINDOW_HEIGHT = 480;
     private Ball pongBall;
@@ -11,7 +11,7 @@ public class PongGame extends JPanel implements KeyListener {
 
     private int leftScore, rightScore, bounceCount, leftInput, rightInput;
 
-    public PongGame() {
+    public JavaPong() {
 
         pongBall = new Ball(300, 200, 3, 3, 3, Color.YELLOW, 10);
         leftPaddle = new Paddle(10, 200, 75, 3, Color.BLUE);
@@ -138,23 +138,17 @@ public class PongGame extends JPanel implements KeyListener {
 
             leftInput = 0;
 
-            return;
-
         }
 
         if (key == KeyEvent.VK_S) {
 
             leftInput = WINDOW_HEIGHT;
 
-            return;
-
         }
 
         if (key == KeyEvent.VK_UP) {
 
             rightInput = 0;
-
-            return;
 
         }
 
