@@ -25,12 +25,26 @@ public class Paddle {
 
     }
 
-    public void moveTowards(int moveToY) {
+    public int getCentreY() {
+
+        return y + height/2;
+
+    }
+
+    public void moveTowards(int moveToY, int top, int bottom) {
 
         // Get the location of the paddle's centre
-        int centreY = y + height/2;
+        int centreY = getCentreY();
+        int bottomY = y + height;
 
         if (Math.abs(moveToY - centreY) <= speed) {
+
+            return;
+
+        }
+
+        if ((y - speed <= top && moveToY < centreY) ||
+                (bottomY + speed >= bottom && moveToY > centreY)) {
 
             return;
 

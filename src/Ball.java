@@ -91,27 +91,33 @@ public class Ball {
     }
 
     public void setX(int x) {
+
         this.x = x;
+
     }
 
     public void setY(int y) {
+
         this.y = y;
+
     }
 
     public void setChangeX(int changeX) {
+
         this.changeX = changeX;
+
     }
 
     public void setChangeY(int changeY) {
+
         this.changeY = changeY;
+
     }
 
     public void setSpeed(int speed) {
-        this.speed = speed;
-    }
 
-    public void setSize(int size) {
-        this.size = size;
+        this.speed = speed;
+
     }
 
 }
