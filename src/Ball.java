@@ -36,25 +36,13 @@ public class Ball {
 
     public void bounceOffEdges(int top, int bottom) {
 
-        if (y > bottom - size) {
+        if (y > bottom - size || y < top) {
 
             reverseY();
 
         }
 
-        else if (y < top) {
-
-            reverseY();
-
-        }
-
-        if (x < 0) {
-
-            reverseX();
-
-        }
-
-        else if (x > 640 - size) {
+        if (x < 0 || x > 640 - size) {
 
             reverseX();
 
@@ -79,5 +67,16 @@ public class Ball {
         return y;
 
     }
-    
+
+    public int getX() {
+
+        return x;
+
+    }
+
+    public int getSize() {
+
+        return size;
+
+    }
 }

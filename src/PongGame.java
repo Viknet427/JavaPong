@@ -54,6 +54,13 @@ public class PongGame extends JPanel implements MouseMotionListener {
         // Moves the PC's paddle so that it matches the Y position of the ball
         pcPaddle.moveTowards(pongBall.getY());
 
+        if (pcPaddle.checkCollision(pongBall) ||
+                userPaddle.checkCollision(pongBall)) {
+
+            pongBall.reverseX();
+
+        }
+
     }
 
     @Override

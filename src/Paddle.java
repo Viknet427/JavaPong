@@ -51,4 +51,16 @@ public class Paddle {
 
     }
 
+    public boolean checkCollision(Ball pongBall) {
+
+        int bottomY, rightX, leftX;
+        bottomY = y + height;
+        rightX = x + PADDLE_WIDTH;
+        leftX = x - pongBall.getSize();
+
+        return pongBall.getX() < rightX && pongBall.getX() > leftX &&
+                pongBall.getY() < bottomY && pongBall.getY() > y;
+
+    }
+
 }

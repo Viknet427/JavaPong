@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 public class Main {
 
     // Declare and initialize the frame
-    static JFrame frame = new JFrame("Pong");
+    static JFrame frame = new JFrame("JavaPong");
     public static void main(String[] args) {
 
         // Make the program exits when the window is closed
